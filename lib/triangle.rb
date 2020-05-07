@@ -5,12 +5,12 @@ class Triangle
     @a = a
     @b = b
     @c = c
-    @@all << self 
+    @@all << self
   end
 
 def self.all
-  @@all 
-end 
+  @@all
+end
   def kind
     validate_triangle
     if a == b && b == c
@@ -23,7 +23,7 @@ end
   end
 
   def validate_triangle
-    self = [ (a + b > c), (a + c > b), (b + c > a)]
+    triangle = [ (a + b > c), (a + c > b), (b + c > a)]
     [a, b, c].each { |s| self << false if s <= 0}
     raise TriangleError if self.include?(false)
   end
